@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Expense</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+<link th:href="@{/styles/navbar.css}" rel="stylesheet" />
+<link th:href="@{/styles/style.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="nav">
+<ul class="nav-ul">
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="/new">Add Expense</a></li>
+  <li><a href="/display">Display Expenses</a></li>
+  <li><a href="/display_by_table">Edit Expense</a></li>
+</ul>
+</div>
+
+
+	<div align="center">
+		<h1>Edit Expense</h1>
+		<br />
+
+<div class="myform menu" style="margin-top:10px">
+		<form action="#" th:action="@{/save}" th:object="${expense}"
+			method="post">
+	<label for="id">Expense Id</label>
+			<input type="text" th:field="*{id}" readonly="readonly" />
+	<label for="expenseType">Expense Name</label>
+   <input type="text" th:field="*{expenseType}" placeholder="Expense Name" />
+    <label for="cost">Cost of Expense</label>
+   <input type="text" th:field="*{cost}"  placeholder="Cost of Expense"/>
+  
+    <label for="date">Date</label><br/>
+   <input type="date" th:field="*{date}" />
+
+<input type="submit" value ="Update">
+		</form>
+	</div>
+</div>
+</body>
+</html>

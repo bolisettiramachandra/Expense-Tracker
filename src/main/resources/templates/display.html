@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Display Expenses</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+<link th:href="@{/styles/navbar.css}" rel="stylesheet" />
+<link th:href="@{/styles/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+
+<div class="nav">
+<ul class="nav-ul">
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="/new">Add Expense</a></li>
+  <li><a href="/display">Display Expenses</a></li>
+ <li><a href="/display_by_table">Edit Expense</a></li>
+</ul>
+</div>
+
+
+<div align="center">
+
+<div class="menu">
+
+<div class="row">
+
+  <div class="column">
+    <div class="card">
+      <h3><a href="/display_by_table">Show by Table</a></h3>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3><a href="/display_by_date">Display Graph by Date</a></h3>
+    </div>
+  </div>
+  
+    <div class="column">
+    <div class="card">
+      <h3><a href="/display_by_date">Display Graph by Expense</a></h3>
+    </div>
+  </div>
+  
+</div>
+</div>
+
+ </div>
+
+</body>
+</html>

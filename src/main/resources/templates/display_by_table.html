@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Displaying With Table</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+<link th:href="@{/styles/navbar.css}" rel="stylesheet" />
+<link th:href="@{/styles/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="nav">
+<ul class="nav-ul">
+  <li><a class="active" href="/">Home</a></li>
+  <li><a href="/new">Add Expense</a></li>
+  <li><a href="/display">Display Expenses</a></li>
+  <li><a href="/display_by_table">Edit Expense</a></li>
+</ul>
+</div>
+
+<div class="menu" align="center">
+
+<table border="1" id="expenses">
+		<thead>
+			<tr>	
+				<th>Expense Id </th>
+				<th>Expense Name </th>
+				<th>Cost </th>
+				<th>Date</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+		
+			<tr th:each="ex : ${listExpenses}">
+				<td th:text = "${ex.id}" >Product Id</td>
+				<td th:text = "${ex.expenseType}" >Name</td>
+				<td th:text = "${ex.cost}" >Brand</td>
+				<td th:text = "${ex.date}" >Made in</td>
+				<td>
+					<a th:href="@{'/edit/'+ ${ex.id}}">Edit</a>
+					
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a th:href="@{'/delete/'+ ${ex.id}}">Delete</a>
+				</td>
+			
+			</tr>
+		
+		</tbody>
+		
+	</table>
+
+</div>
+
+</body>
+</html>
